@@ -17,10 +17,10 @@ jobs:
           LAST_NAME: Octocat
         with:
           script: |
-            const { owner, repo } = context.repo;
+            const { owner } = context.repo;
             await github.rest.actions.createWorkflowDispatch({
               owner,
-              repo,
+              repo: 'mauris.github.io',
               workflow_id: 'workflows/deploy.yml',
               ref: 'main',
             });
