@@ -9,12 +9,11 @@ on:
 jobs:
   deployment:
     runs-on: ubuntu-latest
-    permissions:
-      deployments: write
     steps:
       - name: Deploy Stage
         uses: actions/github-script@v6
         with:
+          github-token: ${{ secrets.MAIN_DEPLOY_KEY }}
           script: |
             const { owner } = context.repo;
             await github.rest.actions.createWorkflowDispatch({
