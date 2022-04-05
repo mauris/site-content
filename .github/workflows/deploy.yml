@@ -9,6 +9,8 @@ on:
 jobs:
   deployment:
     runs-on: ubuntu-latest
+    permissions:
+      deployments: write
     steps:
       - name: Deploy Stage
         uses: actions/github-script@v6
