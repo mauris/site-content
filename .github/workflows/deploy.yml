@@ -17,7 +17,7 @@ jobs:
           LAST_NAME: Octocat
         with:
           script: |
-            const { owner, repo } = context.repo();
+            const { owner, repo } = context.repo;
             await github.rest.actions.createWorkflowDispatch({
               owner,
               repo,
