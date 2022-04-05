@@ -14,15 +14,12 @@ jobs:
     steps:
       - name: Deploy Stage
         uses: actions/github-script@v6
-        env:
-          FIRST_NAME: Mona
-          LAST_NAME: Octocat
         with:
           script: |
             const { owner } = context.repo;
             await github.rest.actions.createWorkflowDispatch({
               owner,
               repo: 'mauris.github.io',
-              workflow_id: 'workflows/deploy.yml',
+              workflow_id: 'deploy.yml',
               ref: 'main',
             });
