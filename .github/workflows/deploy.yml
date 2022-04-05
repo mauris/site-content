@@ -15,8 +15,8 @@ jobs:
         with:
           script: |
             await github.rest.actions.createWorkflowDispatch({
-              'mauris,
-              'mauris.github.io',
-              'workflows/deploy.yml',
-              'main',
+              owner: 'mauris,
+              repo: 'mauris.github.io',
+              workflow_id: 'workflows/deploy.yml',
+              ref: 'main',
             });
