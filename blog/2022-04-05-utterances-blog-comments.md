@@ -3,6 +3,9 @@ title: "Utterances: Blog Comments with GitHub Issues"
 date: "2022-04-06"
 coverImage: https://images.unsplash.com/photo-1648598037844-84ca8cb3bc88?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=davis-patton-qkoLsnNsJMg-unsplash.jpg&w=1920
 coverImageCaption: Photo by [Davis Patton](https://unsplash.com/@davispatton) on Unsplash
+tags:
+  - utterances
+  - giscus
 ---
 
 Awhile back when I was reading up on [TkDodo's commentaries of react-query](https://tkdodo.eu/blog/practical-react-query), I noticed that TkDodo's blog has a nice comments section that looked very familiar. Upon closer inspection, I realised it was a widget called [Utterances](https://utteranc.es/), which allowed comments to be stored on a GitHub repository's issues.
