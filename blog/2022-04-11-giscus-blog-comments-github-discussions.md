@@ -19,6 +19,6 @@ Being "heavily inspired by utterances", Giscus is similar in many aspects (clien
 
 One thing I was facinated about, was that the comments widget did not reload fully when themes changed. I dug into the component library's source code and found that Giscus's component library leverages on [message passing to the iframe](https://github.com/giscus/giscus-component/blob/main/web/src/giscus.ts#L202) to update changes occurred in the component props. When using Utterances, any change in the props would result in a full reload of the script and iframe.
 
-![](https://raw.githubusercontent.com/mauris/site-content/main/ssets/d3c0caadbf.gif)
+![](https://raw.githubusercontent.com/mauris/site-content/main/assets/d3c0caadbf.gif)
 
 Giscus worked nicely, and I guess it's here to stay on my blog. Kudos to the Giscus team for building on the goodness that Utterances brought about.
