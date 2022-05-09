@@ -3,6 +3,9 @@ title: "React-Query: abstracting query options"
 date: "2022-05-08"
 coverImage: https://images.unsplash.com/photo-1515674447568-09bbb507b96c?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=possessed-photography-Xlx80tr5bEE-unsplash.jpg&w=1920
 coverImageCaption: Photo by [Possessed Photography](https://unsplash.com/@possessedphotography) on Unsplash
+tags:
+  - react
+  - react-query
 ---
 
 I've found [react-query](https://react-query.tanstack.com/) to be pleasantly straightforward and easy to use in managing server-side state on React and React Native apps, with plenty of support and resources from the likes of [TkDodo's blog](https://tkdodo.eu/blog/practical-react-query) and [online courses](https://ui.dev/react-query?coupon_code=aQcnd).
