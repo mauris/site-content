@@ -10,17 +10,17 @@ I've found [react-query](https://react-query.tanstack.com/) to be pleasantly str
 React Query deals with, you guessed it, [queries](https://react-query.tanstack.com/guides/queries). As you build up your React application, you will find yourself facing some of these scenarios:
 
 - you have queries that execute depending on the data returned from an earlier query: you can run conditional queries like in the guide on [Dependent Queries](https://react-query.tanstack.com/guides/dependent-queries).
-- you have queries that can run in parallel: you can use [`useQueries()`](https://react-query.tanstack.com/guides/parallel-queries).
-- you have the same query that will be requested by multiple components in the same render cycle: It's more favourable to request for the same query multiple times than to perform [props drilling](https://blogs.perficient.com/2021/12/03/understanding-react-context-and-property-prop-drilling/), as you can configure [`staleTime`](https://react-query.tanstack.com/guides/important-defaults) to your needs)
+- you have queries that can run in parallel: [`useQueries()`](https://react-query.tanstack.com/guides/parallel-queries) is there to solve parallel queries
+- you have the same query that will be requested by multiple components in the same render cycle: It's more favourable to request for the same query multiple times than to perform [props drilling](https://blogs.perficient.com/2021/12/03/understanding-react-context-and-property-prop-drilling/), as you can configure [`staleTime`](https://react-query.tanstack.com/guides/important-defaults) to your needs
 
-TkDodo has written about [creating custom hooks](https://tkdodo.eu/blog/practical-react-query#create-custom-hooks) and it makes reading a component's code a breeze, because `useQuery` and how data is fetched gets colocated together in a custom hook. For example, a custom hook to fetch the list of todo items:
+TkDodo has written about [creating custom hooks](https://tkdodo.eu/blog/practical-react-query#create-custom-hooks). Using custom hooks makes reading a component's code a breeze, because `useQuery` and how data is fetched gets colocated together in a custom hook. For example, a custom hook to fetch the list of todo items:
 
 ```typescript
 export const useTodoListQuery = (filter: Filter = {}) =>
   useQuery(["todos", filter], () => fetchTodoList(filter));
 ```
 
-As I encountered more of those scenarios I described earlier, I found that I needed to reuse queries that exist in `useQuery` only to be also used in parallel via `useQueries`. To make things more manageable, I decided to write a utility function for building query options, which can be used in the original hook:
+As I encountered more of those scenarios I described earlier, I found the need to reuse queries written in `useQuery` to also be used in `useQueries` for parallel execution. To make things more manageable, I decided to write utility function for constructing query options:
 
 ```typescript
 export const buildTodoListQueryOptions = (filter: Filter) => ({
@@ -58,6 +58,6 @@ export const useLandingInfoQuery = (
   ]);
 ```
 
-That said, I don't think everyone should start going around and pick out their query options from whereever `useQuery` appeared. The abstraction should only occur when there is a good enough reason, like when a particular query needs to be used in multiple instances of `useQuery` and `useQueries` to enhance user experience and loading time.
+This makes it easier to build composable queries. That said, I don't think everyone should start going around and pick out their query options from whereever `useQuery` appeared. The abstraction should only occur when there is a good enough reason to do so, like when a particular query needs to be used in multiple instances of `useQuery` and `useQueries` to enhance user experience and loading time.
 
-What are your thoughts on this?
+What do you think?
