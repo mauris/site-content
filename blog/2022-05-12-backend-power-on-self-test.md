@@ -104,4 +104,4 @@ Even if all the environment variables provided to the application were correct, 
 
 Having POST routines in place, I can be _slightly more_ confident that my backend services would work beyond post-deployment.
 
-POST routines work as well as they are written. As Edsger W. Dijkstra puts it, POST routines - like any other tests - can prove the presence of bugs, **not** the absence of bugs. Instead, you can see POST routines as an additional tool to catch potential failures early on and thus building services that are more resilient.
+POST routines work as well as they are written. As [Edsger W. Dijkstra](https://en.wikipedia.org/wiki/Edsger_W._Dijkstra) puts it, POST routines - like any other tests - can only prove the presence, **not** the absence of bugs. You can instead embrace POST routines as another hammer in your toolbox in catching catch potential failures early on.
