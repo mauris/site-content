@@ -23,7 +23,7 @@ Sometimes backend services deployment fail way past deployment because of miscon
 
 For example, if your database connection uses lazy loading and/or connection pooling, chances are that your backend service doesn't establish a connection to the database at start up (or shortly after deployment) until it is needed while serving some request much later.
 
-> We end up celebrating too early at a successful deployment only to find the services failing when it starts serving workload.
+> We end up celebrating too early at a successful deployment only to find the services failing while handling workload.
 
 ## Enter Power-on Self-test
 
